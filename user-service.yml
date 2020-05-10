@@ -1,0 +1,19 @@
+server:
+  port: 4100
+  servlet:
+    path: /
+
+spring:
+  jersey:
+    application-path: /safarnama-user/api
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    instance:
+      instance-id: ${spring.application.name}:${random.int}
